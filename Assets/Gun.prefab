@@ -184,3 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 0.2
   parent: {fileID: 0}
+  pushStrength: 10
+  MaxAmmo: 2
