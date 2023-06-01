@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LerpCam : MonoBehaviour
 {
-    [SerializeField] public Transform target;
+    [SerializeField] public GameObject target;
     [SerializeField] private float ratio = 0.5f;
 
     // Update is called once per frame
@@ -12,7 +12,7 @@ public class LerpCam : MonoBehaviour
     {
         if (target != null)
         {
-            var temp = Vector3.Lerp(transform.position, target.position, ratio);
+            var temp = Vector3.Lerp(transform.position, target.transform.position, ratio);
 
             Vector3 halfway = new Vector3(temp.x, temp.y, transform.position.z);
 

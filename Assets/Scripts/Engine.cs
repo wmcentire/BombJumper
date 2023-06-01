@@ -89,7 +89,7 @@ public class Engine : MonoBehaviour
 
     public void PlayerDeath()
     {
-        lives--;
+        //lives--; // re instate once titlescreen and end screen are done
         state = State.Dead;
         deadWeight = 3.0f;
         if (lives == 0){
@@ -102,6 +102,6 @@ public class Engine : MonoBehaviour
         GameObject plInstance = Instantiate(player, spawnPoint.position, Quaternion.identity);
         GameObject gunInstance = Instantiate(gun, spawnPoint.position, Quaternion.identity);
         gunInstance.GetComponent<PlayerGun>().parent = plInstance;
-        cam.target = plInstance.transform;
+        cam.target = plInstance;
     }
 }

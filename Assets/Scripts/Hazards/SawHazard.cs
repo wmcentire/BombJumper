@@ -23,22 +23,23 @@ public class SawHazard : Hazard
             this.transform.Translate(direction * speed * Time.deltaTime); // vector calculations dude
 
             //next waypoint
-            if (distance.magnitude < 0.5f)
+            if (distance.magnitude < 0.2f)
             {
+                if (waypoint.nextWaypoint == null)
+                {
+                    forwards = false;
+                }
+                if (waypoint.prevWaypoint == null)
+                {
+                    forwards = true;
+                }
                 if (forwards)
                 {
-                    if (waypoint.nextWaypoint == null)
-                    {
-                        forwards = false;
-                    }
                     waypoint = waypoint.nextWaypoint;
                 }
                 else
                 {
-                    if (waypoint.prevWaypoint == null)
-                    {
-                        forwards = true;
-                    }
+                    
                     waypoint = waypoint.prevWaypoint;
                 }
             }
