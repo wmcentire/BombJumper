@@ -8,6 +8,7 @@ public class PlayerGun : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 0;
     [SerializeField] public GameObject parent;
+    [SerializeField] public GameObject projectilePrefab;
     [SerializeField] private float pushStrength;
     [SerializeField] private int MaxAmmo = 1;
 
@@ -32,6 +33,9 @@ public class PlayerGun : MonoBehaviour
         {
             transform.position = parent.transform.position;
             if(ParMovement.CanJump()) CurrAmmo = MaxAmmo;
+        } else
+        {
+            Destroy(gameObject);
         }
 
         Debug.Log("AMMO: " + CurrAmmo);
@@ -46,6 +50,7 @@ public class PlayerGun : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") & ParRB != null && CurrAmmo > 0)
         {
+            GameObject temp = Instantiate(projectilePrefab, transform.position, transform.rotation);
             ParRB.AddForce(direction.normalized * -pushStrength, ForceMode2D.Impulse);
             CurrAmmo--;
         }

@@ -23,10 +23,7 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.otherCollider.CompareTag("Player"))
-        {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(this);
-        }
+        if (explosionPrefab != null) Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
