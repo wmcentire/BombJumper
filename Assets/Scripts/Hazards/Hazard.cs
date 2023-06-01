@@ -11,6 +11,7 @@ public class Hazard : MonoBehaviour
     {
         if(collision.gameObject.tag == plTag)
         {
+            Debug.Log("Hit");
             Destroy(collision.gameObject);
             engine.PlayerDeath();
         }

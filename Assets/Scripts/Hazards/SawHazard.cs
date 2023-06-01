@@ -8,10 +8,10 @@ public class SawHazard : Hazard
     [SerializeField] float speed = 1.0f;
     private bool forwards = true;
 
-    Rigidbody2D rb;
+    [SerializeField]Rigidbody2D rb;
     void Start()
     {
-        this.TryGetComponent<Rigidbody2D>(out rb);
+        //this.TryGetComponent<Rigidbody2D>(out rb);
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class SawHazard : Hazard
             Vector2 distance = position - (Vector2)waypoint.transform.position; // or flip this if it's wrong
 
             Vector2 direction = distance.normalized;
-            rb.position += (direction * speed); // vector calculations dude
+            rb.MovePosition(direction * speed); // vector calculations dude
 
             //next waypoint
             if (distance.magnitude < 2.0f)
