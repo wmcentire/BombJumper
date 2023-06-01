@@ -7,11 +7,11 @@ public class Hazard : MonoBehaviour
     [SerializeField] Engine engine;
     [SerializeField] string plTag;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == plTag)
+
+        if (collision.gameObject.tag == plTag)
         {
-            Debug.Log("Hit");
             Destroy(collision.gameObject);
             engine.PlayerDeath();
         }

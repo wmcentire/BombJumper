@@ -8,24 +8,22 @@ public class SawHazard : Hazard
     [SerializeField] float speed = 1.0f;
     private bool forwards = true;
 
-    [SerializeField]Rigidbody2D rb;
     void Start()
     {
-        //this.TryGetComponent<Rigidbody2D>(out rb);
+
     }
 
     void Update()
     {
-        if(rb != null)
         {
             Vector2 position = this.transform.position;
-            Vector2 distance = position - (Vector2)waypoint.transform.position; // or flip this if it's wrong
+            Vector2 distance =  (Vector2)waypoint.transform.position - position; // or flip this if it's wrong
 
             Vector2 direction = distance.normalized;
-            rb.MovePosition(direction * speed); // vector calculations dude
+            this.transform.Translate(direction * speed * Time.deltaTime); // vector calculations dude
 
             //next waypoint
-            if (distance.magnitude < 2.0f)
+            if (distance.magnitude < 0.5f)
             {
                 if (forwards)
                 {
@@ -43,7 +41,6 @@ public class SawHazard : Hazard
                     }
                     waypoint = waypoint.prevWaypoint;
                 }
-
             }
         }
         

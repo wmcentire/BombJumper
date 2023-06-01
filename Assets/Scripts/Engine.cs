@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.U2D.Path;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class Engine : MonoBehaviour
     [SerializeField] GameObject gun;
     [SerializeField] Canvas title;
     [SerializeField] Canvas gameUI;
+    [SerializeField] TextMeshPro deathScreen;
     [SerializeField] CheckPointManager chkpntManager;
 
     float time = 0;
@@ -38,6 +40,7 @@ public class Engine : MonoBehaviour
     private void Start()
     {
         state = State.Title;
+        // 
     }
 
     private void Update()
@@ -96,6 +99,6 @@ public class Engine : MonoBehaviour
     private void SpawnPlayer()
     {
         Instantiate(player, spawnPoint);
-        Instantiate(gun, spawnPoint);
+        //Instantiate(gun, spawnPoint);
     }
 }
