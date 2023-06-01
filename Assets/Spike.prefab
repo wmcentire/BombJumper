@@ -116,3 +116,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   engine: {fileID: 0}
   plTag: Player
+  playerDeathSound: {fileID: 6410532450476837633, guid: 5af557a18929b594881a9a66246afdc9, type: 3}

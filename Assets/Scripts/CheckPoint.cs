@@ -12,6 +12,7 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] TextMeshPro displaytime;
     [SerializeField] Color gotColor;
     [SerializeField] Color notColor;
+    [SerializeField] AudioSource hitSound;
     bool Checked = false;
     bool hasRenderer = false;
 
@@ -32,6 +33,7 @@ public class CheckPoint : MonoBehaviour
         {
             engine.CheckPointHit(spawnPoint);
             Checked = true;
+            if(hitSound != null) hitSound.Play();
 
             if (hasRenderer)
             {
