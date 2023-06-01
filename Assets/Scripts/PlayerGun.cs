@@ -16,8 +16,9 @@ public class PlayerGun : MonoBehaviour
     private Rigidbody2D ParRB;
     private PlayerMovement ParMovement;
 
+    
 
-    private void Awake()
+    private void Start()
     {
         CurrAmmo = MaxAmmo;
         if(parent != null)
