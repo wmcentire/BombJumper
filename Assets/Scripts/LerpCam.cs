@@ -12,7 +12,11 @@ public class LerpCam : MonoBehaviour
     {
         if (target != null)
         {
-            transform.position = Vector3.Lerp(transform.position, target.position, ratio);
+            var temp = Vector3.Lerp(transform.position, target.position, ratio);
+
+            Vector3 halfway = new Vector3(temp.x, temp.y, transform.position.z);
+
+            transform.position = halfway;
         }
     }
 }
