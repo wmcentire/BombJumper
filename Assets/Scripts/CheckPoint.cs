@@ -15,13 +15,14 @@ public class CheckPoint : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == plTag && !Checked)
+        Debug.Log("Checkpoint");
+        if (collision.gameObject.tag == plTag && !Checked)
         {
             engine.CheckPointHit(spawnPoint);
             Checked = true;
-            displaytime.text = engine.GetCurrentTime().ToString();
+            //displaytime.text = engine.GetCurrentTime().ToString();
         }
     }
 

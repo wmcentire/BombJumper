@@ -98,7 +98,7 @@ public class Engine : MonoBehaviour
 
     private void SpawnPlayer()
     {
-        Instantiate(player, spawnPoint);
-        //Instantiate(gun, spawnPoint);
+        Instantiate(player, spawnPoint.position, Quaternion.identity);
+        Instantiate(gun, spawnPoint.position, Quaternion.identity);
     }
 }
