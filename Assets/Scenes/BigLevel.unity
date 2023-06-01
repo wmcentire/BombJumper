@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 1312472105}
+    - target: {fileID: 493553585628441488, guid: 19a8237c5f9a00e4aa5efcb587088e9d, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 4998596960139614248, guid: 0194a717db54af849b69567aef1d52bb, type: 3}
     - target: {fileID: 493553585628441582, guid: 19a8237c5f9a00e4aa5efcb587088e9d, type: 3}
       propertyPath: m_Name
       value: Gun

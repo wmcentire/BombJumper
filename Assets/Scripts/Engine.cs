@@ -98,7 +98,8 @@ public class Engine : MonoBehaviour
 
     private void SpawnPlayer()
     {
-        Instantiate(player, spawnPoint.position, Quaternion.identity);
-        Instantiate(gun, spawnPoint.position, Quaternion.identity);
+        GameObject plInstance = Instantiate(player, spawnPoint.position, Quaternion.identity);
+        GameObject gunInstance = Instantiate(gun, spawnPoint.position, Quaternion.identity);
+        gunInstance.GetComponent<PlayerGun>().parent = plInstance;
     }
 }

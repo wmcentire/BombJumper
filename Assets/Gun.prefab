@@ -184,5 +184,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 0.2
   parent: {fileID: 0}
+  projectilePrefab: {fileID: 4998596960139614248, guid: 0194a717db54af849b69567aef1d52bb, type: 3}
   pushStrength: 10
   MaxAmmo: 2
