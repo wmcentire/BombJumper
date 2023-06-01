@@ -17,6 +17,7 @@ public class Engine : MonoBehaviour
     [SerializeField] Canvas gameUI;
     [SerializeField] TextMeshPro deathScreen;
     [SerializeField] CheckPointManager chkpntManager;
+    [SerializeField] private LerpCam cam;
 
     float time = 0;
     int lives = 3;
@@ -101,5 +102,6 @@ public class Engine : MonoBehaviour
         GameObject plInstance = Instantiate(player, spawnPoint.position, Quaternion.identity);
         GameObject gunInstance = Instantiate(gun, spawnPoint.position, Quaternion.identity);
         gunInstance.GetComponent<PlayerGun>().parent = plInstance;
+        cam.target = plInstance.transform;
     }
 }
